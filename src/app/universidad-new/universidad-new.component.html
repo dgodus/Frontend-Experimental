@@ -1,0 +1,49 @@
+<div class="col-md-12">
+    <h2>{{page_title}} </h2>
+    <div class="alert alert-success"*ngIf="status_universidads =='success'">
+       Datos Personales  se ha guardado correctamtente!!
+
+    </div>
+
+    <div class="alert alert-danger"*ngIf="status_universidads =='error'">
+        Datos Personales no se ha guardado correctamtente, intenta de Nuevo!!
+
+    </div>
+
+    <form #uniNew="ngForm" (ngSubmit)="onSubmit(uniNew)"class="col-md-5">
+      <p>
+          <label for="title"> Nombre Universidad</label>
+          <input type="text" name="universidad_nombre" #universidad_nombre="ngModel" [(ngModel)]="universidads.universidad_nombre" class="form-control"
+          required/>
+          <span *ngIf="!universidad_nombre.valid && universidad_nombre.touched">
+              el numero cel  no es valido o numero incorrecto
+
+          </span>
+
+      </p>
+
+      <p>
+        <label for="title"> Fecha que Termino su contrato</label>
+        <input type="date" name="universidad_fecha" #universidad_fecha="ngModel" [(ngModel)]="universidads.universidad_fecha" class="form-control"
+        required/>
+        <span *ngIf="!universidad_fecha.valid && universidad_fecha.touched">
+            el numero cel  no es valido o numero incorrecto
+
+        </span>
+
+    </p>
+    
+    <p>
+        <label for="status"> ¿Le Gusto  su trabajo?</label>
+        <select class="form-control" name="status" #status="ngModel"[(ngModel)]="universidads.status"required>
+            <option value="true" selected="select">Si</option>
+            <option value="false">No</option>
+        </select>
+       
+    </p>
+    <input type="submit" value="Guardar" class="btn btn-success" [disabled]="!uniNew.form.valid"  />
+
+    </form>
+
+</div>
+
