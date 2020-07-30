@@ -1,3 +1,6 @@
+Autor_Godofredo Quea . 
+Copiringth todos los derechos Reservados 2020.
+
 # FrontendEgresados
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
